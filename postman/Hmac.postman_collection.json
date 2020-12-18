@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "be89dbba-5b95-4f0b-9093-c41d62811b41",
+		"name": "Hmac",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hmac Calc",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3b607dd0-8177-4a53-86c9-1b2a2494fda3",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f1eb93d-2a93-412f-bc71-a0b0f8361d4c",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"ORDER_ID\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"auth_token\": \"{{AUTH_TOKEN}}\"\n}"
+				},
+				"url": {
+					"raw": "https://accept.paymobsolutions.com/api/acceptance/transactions/{{transaction_id}}/hmac_calc",
+					"protocol": "https",
+					"host": [
+						"accept",
+						"paymobsolutions",
+						"com"
+					],
+					"path": [
+						"api",
+						"acceptance",
+						"transactions",
+						"{{transaction_id}}",
+						"hmac_calc"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Order_Regestiration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"auth_token\": \"{{AUTH_TOKEN}}\",\n  \"delivery_needed\": \"false\",\n  \"merchant_id\": \"{{MERCHANT_ID}}\",\n  \"amount_cents\": \"100\",\n  \"currency\": \"EGP\",\n  \"items\": []\n}"
+						},
+						"url": {
+							"raw": "https://accept.paymobsolutions.com/api/ecommerce/orders",
+							"protocol": "https",
+							"host": [
+								"accept",
+								"paymobsolutions",
+								"com"
+							],
+							"path": [
+								"api",
+								"ecommerce",
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 23 Sep 2019 11:46:52 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "924"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "ALLOWALL"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubdomains; preload"
+						},
+						{
+							"key": "Public-Key-Pins",
+							"value": "pin-sha256=\"YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=\"; pin-sha256=\"sRHdihwgkaib1P1gxX8HFszlD+7/gTfNvuAybgLPNis=\"; max-age=5184000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3601817,\n    \"created_at\": \"2019-09-23T13:46:52.662827\",\n    \"delivery_needed\": false,\n    \"merchant\": {\n        \"id\": 4214,\n        \"created_at\": \"2019-09-22T18:32:56.764441\",\n        \"phones\": [\n            \"01032347111\"\n        ],\n        \"company_emails\": [\n            \"fnjum@temp-link.net\"\n        ],\n        \"company_name\": \"Accept Payments\",\n        \"state\": \"\",\n        \"country\": \"EGY\",\n        \"city\": \"\",\n        \"postal_code\": \"\",\n        \"street\": \"\"\n    },\n    \"collector\": null,\n    \"amount_cents\": 100,\n    \"shipping_data\": null,\n    \"shipping_details\": null,\n    \"currency\": \"EGP\",\n    \"is_payment_locked\": false,\n    \"is_return\": false,\n    \"is_cancel\": false,\n    \"is_returned\": false,\n    \"is_canceled\": false,\n    \"merchant_order_id\": null,\n    \"wallet_notification\": null,\n    \"paid_amount_cents\": 0,\n    \"notify_user_with_email\": false,\n    \"items\": [],\n    \"order_url\": \"https://accept.paymobsolutions.com/i/Rnsw\",\n    \"commission_fees\": 0,\n    \"delivery_fees_cents\": 0,\n    \"delivery_vat_cents\": 0,\n    \"payment_method\": \"tbc\",\n    \"merchant_staff_tag\": null,\n    \"api_source\": \"OTHER\",\n    \"pickup_data\": null,\n    \"delivery_status\": [],\n    \"token\": \"Rnsw\",\n    \"url\": \"https://accept.paymobsolutions.com/i/Rnsw\"\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}

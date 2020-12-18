@@ -1,0 +1,451 @@
+{
+	"info": {
+		"_postman_id": "242fa2a3-a2af-413f-a9b0-7fa9e85746e0",
+		"name": "Wallet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth_API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"AUTH_TOKEN\", jsonData.token);",
+							"postman.setEnvironmentVariable(\"MERCHANT_ID\", jsonData.profile.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"api_key\": \"{{API_KEY}}\"\n}"
+				},
+				"url": {
+					"raw": "https://accept.paymobsolutions.com/api/auth/tokens",
+					"protocol": "https",
+					"host": [
+						"accept",
+						"paymobsolutions",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"tokens"
+					]
+				},
+				"description": "Generates an authentication token to allow you interact with Accept's APIs"
+			},
+			"response": [
+				{
+					"name": "Auth_API",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"api_key\": \"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTltYVd4bFgzQnJJam8wTWpFMExDSmpiR0Z6Y3lJNklrMWxjbU5vWVc1MElpd2libUZ0WlNJNkltbHVhWFJwWVd3aWZRLlRKOWttUzZJbnlYTTFtb3VkZzhIYVQ3eEIyZk5LZFVFcDE4dG1EVk05VDlFM2UyZU8tSEQwRGtHRkIzeFh1RUtmYUpiSWEzcWVCcjhabktiT282N2pR\"\n}"
+						},
+						"url": {
+							"raw": "https://accept.paymobsolutions.com/api/auth/tokens",
+							"protocol": "https",
+							"host": [
+								"accept",
+								"paymobsolutions",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"tokens"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 23 Sep 2019 12:21:43 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1411"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "ALLOWALL"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubdomains; preload"
+						},
+						{
+							"key": "Public-Key-Pins",
+							"value": "pin-sha256=\"YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=\"; pin-sha256=\"sRHdihwgkaib1P1gxX8HFszlD+7/gTfNvuAybgLPNis=\"; max-age=5184000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"profile\": {\n        \"id\": 4214,\n        \"user\": {\n            \"id\": 4705,\n            \"username\": \"AcceptSupport\",\n            \"first_name\": \"\",\n            \"last_name\": \"\",\n            \"date_joined\": \"2019-09-22T18:32:56.748162\",\n            \"email\": \"fnjum@temp-link.net\",\n            \"is_active\": true,\n            \"is_staff\": false,\n            \"is_superuser\": false,\n            \"last_login\": null,\n            \"groups\": [],\n            \"user_permissions\": [\n                160,\n                116,\n                119,\n                115,\n                137,\n                204,\n                118,\n                122,\n                128,\n                127,\n                203,\n                123,\n                139,\n                130,\n                266,\n                124,\n                259,\n                121,\n                133,\n                206,\n                125,\n                136,\n                185,\n                146,\n                126,\n                258,\n                135,\n                138,\n                205,\n                117,\n                186,\n                132,\n                134,\n                277\n            ]\n        },\n        \"created_at\": \"2019-09-22T18:32:56.764441\",\n        \"active\": true,\n        \"profile_type\": \"Merchant\",\n        \"phones\": [\n            \"01032347111\"\n        ],\n        \"company_emails\": [\n            \"fnjum@temp-link.net\"\n        ],\n        \"company_name\": \"Accept Payments\",\n        \"state\": \"\",\n        \"country\": \"EGY\",\n        \"city\": \"\",\n        \"postal_code\": \"\",\n        \"street\": \"\",\n        \"email_notification\": false,\n        \"order_retrieval_endpoint\": null,\n        \"delivery_update_endpoint\": null,\n        \"logo_url\": null,\n        \"failed_attempts\": 0,\n        \"password\": null,\n        \"custom_export_columns\": [],\n        \"awb_banner\": null,\n        \"email_banner\": null,\n        \"commercial_registration_name\": null,\n        \"tax_number\": null,\n        \"delivery_status_callback\": \"\",\n        \"merchant_external_link\": null\n    },\n    \"token\": \"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SndjbTltYVd4bFgzQnJJam8wTWpFMExDSmxlSEFpT2pFMU5qa3lORFE1TURNc0ltTnNZWE56SWpvaVRXVnlZMmhoYm5RaUxDSndhR0Z6YUNJNkltRnlaMjl1TWlSaGNtZHZiakpwSkhZOU1Ua2tiVDAxTVRJc2REMHlMSEE5TWlSUFNFSmhaVzFhZUZSSFVrMVplbWhNSkZwalNVdENUMnN2TVZKa1kwbHdWVTV2Y2pOaVJrRWlmUS5TbXpmcUtQZmVaSUJ0SjhaY0FiQXg0TkN3bUh0dUVoTFFaMkF5LVQxUVk4QXdqVG1DYV9ZeUZha3lDcDhlYVFtVzNzcy1NVGdOWGdRZFlUNXV5bHJpUQ==\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Order_Regestiration",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"ORDER_ID\", jsonData.id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"auth_token\": \"{{AUTH_TOKEN}}\",\n  \"delivery_needed\": false,\n  \"merchant_id\": \"{{MERCHANT_ID}}\",\n  \"amount_cents\": \"500\",\n  \"currency\": \"EGP\",\n  \"items\": []\n}"
+				},
+				"url": {
+					"raw": "https://accept.paymobsolutions.com/api/ecommerce/orders",
+					"protocol": "https",
+					"host": [
+						"accept",
+						"paymobsolutions",
+						"com"
+					],
+					"path": [
+						"api",
+						"ecommerce",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Order_Regestiration",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"auth_token\": \"{{AUTH_TOKEN}}\",\n  \"delivery_needed\": \"false\",\n  \"merchant_id\": \"{{MERCHANT_ID}}\",\n  \"amount_cents\": \"100\",\n  \"currency\": \"EGP\",\n  \"items\": []\n}"
+						},
+						"url": {
+							"raw": "https://accept.paymobsolutions.com/api/ecommerce/orders",
+							"protocol": "https",
+							"host": [
+								"accept",
+								"paymobsolutions",
+								"com"
+							],
+							"path": [
+								"api",
+								"ecommerce",
+								"orders"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 23 Sep 2019 12:21:56 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "924"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "ALLOWALL"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubdomains; preload"
+						},
+						{
+							"key": "Public-Key-Pins",
+							"value": "pin-sha256=\"YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=\"; pin-sha256=\"sRHdihwgkaib1P1gxX8HFszlD+7/gTfNvuAybgLPNis=\"; max-age=5184000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3602016,\n    \"created_at\": \"2019-09-23T14:21:56.681005\",\n    \"delivery_needed\": false,\n    \"merchant\": {\n        \"id\": 4214,\n        \"created_at\": \"2019-09-22T18:32:56.764441\",\n        \"phones\": [\n            \"01032347111\"\n        ],\n        \"company_emails\": [\n            \"fnjum@temp-link.net\"\n        ],\n        \"company_name\": \"Accept Payments\",\n        \"state\": \"\",\n        \"country\": \"EGY\",\n        \"city\": \"\",\n        \"postal_code\": \"\",\n        \"street\": \"\"\n    },\n    \"collector\": null,\n    \"amount_cents\": 100,\n    \"shipping_data\": null,\n    \"shipping_details\": null,\n    \"currency\": \"EGP\",\n    \"is_payment_locked\": false,\n    \"is_return\": false,\n    \"is_cancel\": false,\n    \"is_returned\": false,\n    \"is_canceled\": false,\n    \"merchant_order_id\": null,\n    \"wallet_notification\": null,\n    \"paid_amount_cents\": 0,\n    \"notify_user_with_email\": false,\n    \"items\": [],\n    \"order_url\": \"https://accept.paymobsolutions.com/i/RnuQ\",\n    \"commission_fees\": 0,\n    \"delivery_fees_cents\": 0,\n    \"delivery_vat_cents\": 0,\n    \"payment_method\": \"tbc\",\n    \"merchant_staff_tag\": null,\n    \"api_source\": \"OTHER\",\n    \"pickup_data\": null,\n    \"delivery_status\": [],\n    \"token\": \"RnuQ\",\n    \"url\": \"https://accept.paymobsolutions.com/i/RnuQ\"\n}"
+				}
+			]
+		},
+		{
+			"name": "WalletPayment Key",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"wallet_pay\", jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"auth_token\": \"{{AUTH_TOKEN}}\",\n  \"amount_cents\": \"500\", \n  \"expiration\": 3600, \n  \"order_id\": \"{{ORDER_ID}}\",\n  \"billing_data\": {\n    \"apartment\": \"803\", \n    \"email\": \"claudette09@exa.com\", \n    \"floor\": \"42\", \n    \"first_name\": \"Clifford\", \n    \"street\": \"Ethan Land\", \n    \"building\": \"8028\", \n    \"phone_number\": \"+86(8)9135210487\", \n    \"shipping_method\": \"PKG\", \n    \"postal_code\": \"01898\", \n    \"city\": \"Jaskolskiburgh\", \n    \"country\": \"CR\", \n    \"last_name\": \"Nicolas\", \n    \"state\": \"Utah\"\n  }, \n  \"currency\": \"EGP\", \n  \"integration_id\": \"{{MW_INTEGRATION_ID}}\",\n  \"lock_order_when_paid\": false\n}"
+				},
+				"url": {
+					"raw": "https://accept.paymobsolutions.com/api/acceptance/payment_keys",
+					"protocol": "https",
+					"host": [
+						"accept",
+						"paymobsolutions",
+						"com"
+					],
+					"path": [
+						"api",
+						"acceptance",
+						"payment_keys"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "valU Payment Key",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"auth_token\": \"{{AUTH_TOKEN}}\",\n  \"amount_cents\": \"100\", \n  \"expiration\": 3600, \n  \"order_id\": \"{{id}}\",\n  \"billing_data\": {\n    \"apartment\": \"803\", \n    \"email\": \"claudette09@exa.com\", \n    \"floor\": \"42\", \n    \"first_name\": \"Clifford\", \n    \"street\": \"Ethan Land\", \n    \"building\": \"8028\", \n    \"phone_number\": \"+86(8)9135210487\", \n    \"shipping_method\": \"PKG\", \n    \"postal_code\": \"01898\", \n    \"city\": \"Jaskolskiburgh\", \n    \"country\": \"CR\", \n    \"last_name\": \"Nicolas\", \n    \"state\": \"Utah\"\n  }, \n  \"currency\": \"EGP\", \n  \"integration_id\": 6752,\n  \"lock_order_when_paid\": \"false\"\n}"
+						},
+						"url": {
+							"raw": "https://accept.paymobsolutions.com/api/acceptance/payment_keys",
+							"protocol": "https",
+							"host": [
+								"accept",
+								"paymobsolutions",
+								"com"
+							],
+							"path": [
+								"api",
+								"acceptance",
+								"payment_keys"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 23 Sep 2019 12:22:12 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1004"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "ALLOWALL"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubdomains; preload"
+						},
+						{
+							"key": "Public-Key-Pins",
+							"value": "pin-sha256=\"YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg=\"; pin-sha256=\"sRHdihwgkaib1P1gxX8HFszlD+7/gTfNvuAybgLPNis=\"; max-age=5184000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmlhV3hzYVc1blgyUmhkR0VpT25zaVptbHljM1JmYm1GdFpTSTZJa05zYVdabWIzSmtJaXdpYkdGemRGOXVZVzFsSWpvaVRtbGpiMnhoY3lJc0luTjBjbVZsZENJNklrVjBhR0Z1SUV4aGJtUWlMQ0ppZFdsc1pHbHVaeUk2SWpnd01qZ2lMQ0ptYkc5dmNpSTZJalF5SWl3aVlYQmhjblJ0Wlc1MElqb2lPREF6SWl3aVkybDBlU0k2SWtwaGMydHZiSE5yYVdKMWNtZG9JaXdpYzNSaGRHVWlPaUpWZEdGb0lpd2lZMjkxYm5SeWVTSTZJa05TSWl3aVpXMWhhV3dpT2lKamJHRjFaR1YwZEdVd09VQmxlR0V1WTI5dElpd2ljR2h2Ym1WZmJuVnRZbVZ5SWpvaUt6ZzJLRGdwT1RFek5USXhNRFE0TnlJc0luQnZjM1JoYkY5amIyUmxJam9pTURFNE9UZ2lMQ0psZUhSeVlWOWtaWE5qY21sd2RHbHZiaUk2SWs1QkluMHNJbVY0Y0NJNk1UVTJPVEkwTkRrek1pd2ljRzFyWDJsd0lqb2lOREV1TkRJdU1UUTVMakUwT1NJc0ltRnRiM1Z1ZEY5alpXNTBjeUk2TVRBd0xDSnZjbVJsY2w5cFpDSTZNell3TWpBeE5pd2lhVzUwWldkeVlYUnBiMjVmYVdRaU9qWTNOVElzSW5WelpYSmZhV1FpT2pRM01EVXNJbU4xY25KbGJtTjVJam9pUlVkUUlpd2liRzlqYTE5dmNtUmxjbDkzYUdWdVgzQmhhV1FpT21aaGJITmxmUS5qSTJCNFZ3RDltdmVHRjVFOFNHYzRYVkR2RHhRSkpSNFNVVEw2alU2WWgyQ0VzanZ6MXRmOFdvdUhCYk9PLUtGVTY5Zk1MUDhrbkg4cFd2bVlaQ2VSdw==\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Wallet Pay",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"source\": {\r\n    \"identifier\": \"{{MW_MOBILE_NUM}}\", \r\n    \"subtype\": \"WALLET\"\r\n  },\r\n  \"payment_token\": \"{{wallet_pay}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://accept.paymobsolutions.com/api/acceptance/payments/pay",
+					"protocol": "https",
+					"host": [
+						"accept",
+						"paymobsolutions",
+						"com"
+					],
+					"path": [
+						"api",
+						"acceptance",
+						"payments",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

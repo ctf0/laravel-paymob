@@ -1,0 +1,34 @@
+{
+    "name": "ctf0/laravel-paymob",
+    "description": "paymob integration for laravel",
+    "homepage": "https://github.com/ctf0/laravel-paymob",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "muah",
+            "email": "muah003@gmail.com"
+        }
+    ],
+    "keywords": [
+        "Laravel",
+        "PayMob"
+    ],
+    "require": {
+        "illuminate/support": ">=7 <9"
+    },
+    "autoload": {
+        "psr-4": {
+            "ctf0\\PayMob\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ctf0\\PayMob\\PayMobServiceProvider"
+            ],
+            "aliases": {
+                "PayMob": "ctf0\\PayMob\\Facades\\PayMob"
+            }
+        }
+    }
+}
