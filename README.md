@@ -77,7 +77,7 @@
 
 ### # Normal
 
-- update [`controller`](./src/config/paymob.php) with your own controller, which should have 3 methods
+- update [`paymob.controller`](./src/config/paymob.php) with your own controller, which should have 3 methods
     > you can check [`DummyController`](./src/Controllers/DummyController.php) for a more detailed overview.
 
     | type | @method    | return                                                                                                                                                                           |
