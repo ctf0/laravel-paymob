@@ -30,5 +30,11 @@
                 "PayMob": "ctf0\\PayMob\\Facades\\PayMob"
             }
         }
-    }
+    },
+    "funding": [
+        {
+            "type": "patreon",
+            "url": "https://www.patreon.com/ctf0"
+        }
+    ]
 }
