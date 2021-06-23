@@ -21,8 +21,6 @@ class DummyController extends Controller
 
     /**
      * process the order on the gateway side.
-     *
-     * @return \Illuminate\View\View
      */
     public function process(Request $request)
     {
@@ -48,12 +46,14 @@ class DummyController extends Controller
      * validate and complete the order.
      *
      * https://acceptdocs.paymobsolutions.com/docs/transaction-callbacks#transaction-response-callback.
+     *
+     * @return \Illuminate\View\View
      */
     public function complete(Request $request)
     {
         PayMob::validateHmac($request->hmac, $request->id);
 
-        // save the transaction data to our server
+        // save the transaction data to the server
         $data = $request->all();
 
         return view('paymod::complete');
