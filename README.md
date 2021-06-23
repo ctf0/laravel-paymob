@@ -52,9 +52,10 @@
     + all the **optional** fields has already been taken care of.
 
     ```php
+    use Illuminate\Database\Eloquent\Model;
     use ctf0\PayMob\Integrations\Contracts\Billable;
 
-    class Client implements Billable
+    class Client extends Model implements Billable
     {
         // ...
 
