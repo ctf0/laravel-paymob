@@ -16,7 +16,7 @@ class DummyController extends Controller
      */
     public function checkOut()
     {
-        return view('paymod::checkout');
+        return view('paymob::checkout');
     }
 
     /**
@@ -56,6 +56,6 @@ class DummyController extends Controller
         // save the transaction data to the server
         $data = $request->all();
 
-        return view('paymod::complete');
+        return view('paymob::complete');
     }
 }
